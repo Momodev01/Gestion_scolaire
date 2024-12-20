@@ -16,7 +16,7 @@ class Etudiant
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 15)]
+    #[ORM\Column(length: 15, unique:true)]
     private ?string $matricule = null;
 
     #[ORM\Column(length: 100)]
@@ -29,7 +29,7 @@ class Etudiant
     #[ORM\JoinColumn(nullable: true)]
     private ?Classe $classe = null;
 
-    #[ORM\Column(length: 25)]
+    #[ORM\Column(length: 25, unique:true)]
     private ?string $login = null;
 
     #[ORM\Column(length: 25)]
