@@ -16,13 +16,13 @@ class Classe
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 25)]
+    #[ORM\Column(length: 25, unique:true)]
     private ?string $nom = null;
 
     /**
      * @var Collection<int, Etudiant>
      */
-    #[ORM\OneToMany(targetEntity: Etudiant::class, mappedBy: 'classe')]
+    #[ORM\OneToMany(targetEntity: Etudiant::class, mappedBy: 'classe', cascade:["persist"])]
     private Collection $etudiants;
 
     #[ORM\Column]
